@@ -3,7 +3,7 @@
     int[] arr = new int[len];
     for (int i = 0; i < len; i++)
     {
-        arr[i] = new Random().Next(-100, 101);
+        arr[i] = new Random().Next(0, 101);
     }
     return arr;
 }
@@ -18,15 +18,20 @@ void PrintArray(int[] arr)
     Console.WriteLine();
 }
 
-void ReSignArray(int[] arr)
+void FindNumber(int[] arr, int num)
 {
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = -1 * arr[i];
+        if (arr [i] == num) 
+            {
+                Console.WriteLine("Yes");
+                return;
+            }
     }
+    Console.WriteLine("No");
 }
 
 int[] myarr = ArrayCreation(10);
+int number = 5;
 PrintArray(myarr);
-ReSignArray(myarr);
-PrintArray(myarr);
+FindNumber(myarr, number);
